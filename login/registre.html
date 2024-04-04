@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Cadastro</h2>
+        <form id="registration-form">
+            <input type="text" id="cpf" placeholder="CPF" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="text" id="name" placeholder="Nome" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Ja tenho uma conta--<a href="Login.html">voltar</a></p>
+    </div>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url("cadastro.jpg");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.registration-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<script>
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar o comportamento padrão do formulário (recarregar a página)
+
+    // Coletar os valores dos campos
+    var cpf = document.getElementById('cpf').value;
+    var email = document.getElementById('email').value;
+    var name = document.getElementById('name').value;
+    var password = document.getElementById('password').value;
+
+    // Aqui você pode adicionar a lógica para enviar os dados do formulário para o servidor
+    // Por exemplo, usando fetch() ou XMLHttpRequest para enviar uma requisição POST
+
+    // Depois de enviar os dados, você pode redirecionar o usuário para a página de login
+    window.location.href = 'login.html';
+});
+
+</script>
